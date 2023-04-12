@@ -34,6 +34,8 @@ export function App() {
       paginatedTransactionsUtils.invalidateData()
       if (employeeId) {
         await transactionsByEmployeeUtils.fetchById(employeeId)
+      } else {
+        await paginatedTransactionsUtils.fetchAll()
       }
     },
     [paginatedTransactionsUtils, transactionsByEmployeeUtils]
